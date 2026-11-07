@@ -9,9 +9,14 @@ public class DigitalProduct extends Product {
 
     public DigitalProduct(Long id, String name, double price,
                           String downloadUrl, double fileSizeMB) {
-        super(id, name, price);          // must be the first line
+        super(id, name, price);
         this.downloadUrl = downloadUrl;
         this.fileSizeMB = fileSizeMB;
+    }
+    @Override
+    public String getSummary() {
+        return "Digital: " + getName()
+                + " | Download: " + downloadUrl;
     }
 
     public String getDownloadUrl() {
